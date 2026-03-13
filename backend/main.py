@@ -35,13 +35,16 @@ def create_app() -> FastAPI:
 
     # Basic CORS configuration so the Next.js frontend can call this API from localhost.
     frontend_origins = os.getenv("FRONTEND_ORIGINS", "http://localhost:3000").split(",")
-    app.add_middleware(
-        CORSMiddleware,
-        allow_origins=["*"],
-        allow_credentials=True,
-        allow_methods=["*"],
-        allow_headers=["*"]
-    )
+   app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:3000",
+        "https://iso-merchant-reasoning-engine.vercel.app"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
     # Initialize the shared reasoning engine instance.
     engine = ReasoningEngine(config=ReasoningEngineConfig())
