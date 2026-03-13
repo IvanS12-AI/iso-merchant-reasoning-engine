@@ -9,9 +9,9 @@ from langchain.memory import ConversationBufferMemory
 from langchain_openai import ChatOpenAI
 from pydantic import BaseModel
 
-from backend.chains.analysis_chain import build_analysis_chain
-from backend.chains.insight_chain import build_insight_chain
-from backend.chains.recommendation_chain import build_recommendation_chain
+from chains.analysis_chain import build_analysis_chain
+from chains.insight_chain import build_insight_chain
+from chains.recommendation_chain import build_recommendation_chain
 
 
 class ReasoningEngineConfig(BaseModel):
