@@ -37,10 +37,10 @@ def create_app() -> FastAPI:
     frontend_origins = os.getenv("FRONTEND_ORIGINS", "http://localhost:3000").split(",")
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=[origin.strip() for origin in frontend_origins],
+        allow_origins=["*"],
         allow_credentials=True,
         allow_methods=["*"],
-        allow_headers=["*"],
+        allow_headers=["*"]
     )
 
     # Initialize the shared reasoning engine instance.
