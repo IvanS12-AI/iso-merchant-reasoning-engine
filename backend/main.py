@@ -7,12 +7,12 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import ValidationError
 
-from backend.models.schemas import (
+from models.schemas import (
     MerchantAnalysisRequest,
     MerchantAnalysisResponse,
     ReasoningResult,
 )
-from backend.services.reasoning_engine import ReasoningEngine, ReasoningEngineConfig
+from services.reasoning_engine import ReasoningEngine, ReasoningEngineConfig
 
 
 def create_app() -> FastAPI:
